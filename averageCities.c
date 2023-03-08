@@ -23,9 +23,9 @@ void printData(char filename[], float min_temp, float max_temp, float avg, int n
     printf("===========================================\n");
     printf("File                %s\n", filename);
     printf("Number of entries   %d\n", num_entries);
-    printf("Min temprature      %.2f\n", min_temp);
-    printf("Max temprature      %.2f\n", max_temp);
-    printf("Average temprature  %.2f\n", avg);
+    printf("Min temprature      %.2f degrees\n", min_temp);
+    printf("Max temprature      %.2f degrees\n", max_temp);
+    printf("Average temprature  %.2f degrees\n", avg);
     pthread_mutex_unlock(&mutex);
 }
 
@@ -62,7 +62,6 @@ int main(int argc, char* argv[]){
     pthread_mutex_init(&mutex, NULL);
     
     start_time = clock();
-  
     for(int i = 0; i < argc; i++){
         if(strcmp(argv[i], "-m") == 0)
             multithread = TRUE;
