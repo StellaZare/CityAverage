@@ -92,7 +92,7 @@ There is error handling for the call to fopen()
 
 ## Single vs. Multithreaded Processing
 When ./averageCities is run as a single threaded process each file is opened, read and data printed before the next file is processed. 
-However, when ./averageCities is run as a multithreaded process each file is processed in an individual thread. Meaning all 10 files are read in parallel however they each wait for their turn to print by acuiring the mutex. 
+alternatively when ./averageCities is run as a multithreaded process each file is processed in an individual thread; meaning all 10 files are read in parallel but they each wait for their turn to enter their critical sections by acuiring the mutex. 
 
 By tracking the number of clock cycles we can compare the efficently of both approaches.
 ```C
