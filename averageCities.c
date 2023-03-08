@@ -49,6 +49,7 @@ void* processCity(char filename[]){
         avg = avg + data[0] + data[1];
         num_entries++;
     }
+    fclose(file);
 
     avg = avg/num_entries;
     printData(filename, min_temp, max_temp, avg, num_entries);
@@ -73,7 +74,7 @@ int main(int argc, char* argv[]){
         for(int idx = 0; idx < MAX_CITIES; idx++){
             char file_path[MAX_LENGTH] = "data/";
             strcat(file_path, cities[idx]);
-            int return_value = pthread_create(&threads[idx], NULL, processCity, strdup(file_path));
+            int return_value = pthread_create(&threads[idx], NULL, (void*)processCity, strdup(file_path));
             if (return_value) {
                 printf("Error unable to create thread %s\n", file_path);
                 exit(1);
@@ -91,8 +92,8 @@ int main(int argc, char* argv[]){
         }   
     }
 
-    end_time = clock();
     pthread_mutex_destroy(&mutex);
+    end_time = clock();
     printf("===========================================\n");
     printf("Clock cycles    %ld\n", end_time - start_time);
     return 0;
