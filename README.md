@@ -83,6 +83,13 @@ pthread_mutex_unlock(&mutex);
 Once the mutex has bee acquired the function compared the overall values with those of the specific file and updates global values are required. 
 The the function prints the data relating to the specific file, before releasing the mutex.
 
+For each city file the function prints the followign data points:
+* Name of the file
+* Number of entries (lines) in the file
+* Min temp in file
+* Max tmep in file
+* Avg temp reported (sum of all values / 2*num_entries)
+
 ## Error Handling
 ### Main
 There is error handling for the call to pthread_create()
