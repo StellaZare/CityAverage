@@ -42,7 +42,7 @@ void printData(char filename[], float min_temp, float max_temp, float sum_temp, 
     printf("Number of entries   %d\n", num_entries);
     printf("Min temprature      %.2f degrees\n", min_temp);
     printf("Max temprature      %.2f degrees\n", max_temp);
-    printf("Average temprature  %.2f degrees\n", sum_temp/num_entries);
+    printf("Average temprature  %.2f degrees\n", sum_temp/(2*num_entries));
     pthread_mutex_unlock(&mutex);
 }
 
@@ -114,7 +114,7 @@ int main(int argc, char* argv[]){
     printf("Number of entries   %d\n", num_entries_overall);
     printf("Min temprature     %.2f degrees in %s\n", min_temp_overall, min_temp_location);
     printf("Max temprature      %.2f degrees in %s\n", max_temp_overall, max_temp_location);
-    printf("Average temprature  %.2f degrees\n", sum_overall/num_entries_overall);
+    printf("Average temprature  %.2f degrees\n", sum_overall/(2*num_entries_overall));
     printf("Clock cycles        %ld\n", end_time - start_time);
     return 0;
 }
