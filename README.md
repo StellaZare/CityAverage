@@ -49,8 +49,8 @@ This includes:
 * Total number of entries
 * Min temp overall and its location
 * Max temp overall and its location
-* Average temo overall 
-* Clock cycles 
+* Average temp overall 
+* Nuber of Clock cycles 
 
 ### processCity
 The processCity function takes as input a char array object containign the target file's path from the current directory. (ie. data/Victoria.dat)
@@ -87,7 +87,7 @@ For each city file the function prints the followign data points:
 * Name of the file
 * Number of entries (lines) in the file
 * Min temp in file
-* Max tmep in file
+* Max temp in file
 * Avg temp reported (sum of all values / 2*num_entries)
 
 ## Error Handling
