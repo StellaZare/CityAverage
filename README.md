@@ -99,7 +99,9 @@ There is error handling for the call to fopen()
 
 ## Single vs. Multithreaded Processing
 When ./averageCities is run as a single threaded process each file is opened, read and data printed before the next file is processed. 
-alternatively when ./averageCities is run as a multithreaded process each file is processed in an individual thread; meaning all 10 files are read in parallel but they each wait for their turn to enter their critical sections by acuiring the mutex. 
+alternatively when ./averageCities is run as a multithreaded process each file is processed in an individual thread; meaning all 10 files are read in parallel but they each wait for their turn to enter their critical sections by acuiring the mutex. We can also observe the order in which the cities print their output in the multithreaded process can vary as threads may access the mutex in any order.
+
+We can validate the threading is being done correctly by comparing the output data generated with a single threaded process with that of the multithread process. In this case we see that the min temp, max temp, average and number of entries is the same.
 
 By tracking the number of clock cycles we can compare the efficently of both approaches.
 ```C
@@ -108,4 +110,10 @@ start_time = clock();
 // all the code
 end_time = clock();
 ```
+Average clock cycles for single thread after 10 trials: 170751.90
+Average clock cycles for multi- thread after 10 trials: 177916.10
+
+We can see for this program the single threaded approach takes on average 7000 fewer clock cycles than the multi-threaded solution.
+This is normal and could be attributed to the overhead costs of context switches between PCB in the multithreaded solution.
+
 
