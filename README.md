@@ -110,8 +110,8 @@ start_time = clock();
 // all the code
 end_time = clock();
 ```
-Average clock cycles for single thread after 10 trials: 170751.90
-Average clock cycles for multi- thread after 10 trials: 177916.10
+Average clock cycles for single thread after 10 trials: 170751.90 <br />
+Average clock cycles for multi- thread after 10 trials: 177916.10 <br />
 
 We can see for this program the single threaded approach takes on average 7000 fewer clock cycles than the multi-threaded solution.
 This is normal and could be attributed to the overhead costs of context switches between PCB in the multithreaded solution.
@@ -122,8 +122,8 @@ In the previous section I compared the average clock cycle of the single-threade
 
 I can also run the program on my person computer (MasOS) to observe how the performance is affected.
 
-Average clock cycles for single thread after 10 trials: 126114.50
-Average clock cycles for multi- thread after 10 trials: 311203.40
+Average clock cycles for single thread after 10 trials: 126114.50 <br />
+Average clock cycles for multi- thread after 10 trials: 311203.40 <br />
 
 We can see that the single threaded solution is using few clock cycles than the multi-threaded. A trend we observed in the previosu section as well. 
 However we can also see that the single threaded solution performs considerably better on MacOS, while the multi-threaded solution performs better on Linux. This could be due to either operating system's unique shecudlign algorithms.
