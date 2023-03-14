@@ -91,6 +91,9 @@ For each city file the function prints the followign data points:
 * Avg temp reported (sum of all values / 2*num_entries)
 
 ## Error Handling
+### Invalid flag
+If an invalid flag is given the program prints an error message
+
 ### Main
 There is error handling for the call to pthread_create()
 

@@ -88,6 +88,11 @@ int main(int argc, char* argv[]){
             multithread = TRUE;
     }
 
+    if(argc > 1 && multithread == FALSE){
+        printf("\tUnrecognized flag\n");
+        return 0;
+    }
+
     if(multithread){
         printf("Running with multiple threads\n");
         pthread_t threads[MAX_CITIES];
