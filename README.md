@@ -97,6 +97,9 @@ There is error handling for the call to pthread_create()
 ### processCity
 There is error handling for the call to fopen()
 
+### Inconsistencies in Data
+If a line in the data file is empty the line will be 
+
 ## Single vs. Multithreaded Processing
 When ./averageCities is run as a single threaded process each file is opened, read and data printed before the next file is processed. 
 alternatively when ./averageCities is run as a multithreaded process each file is processed in an individual thread; meaning all 10 files are read in parallel but they each wait for their turn to enter their critical sections by acuiring the mutex. We can also observe the order in which the cities print their output in the multithreaded process can vary as threads may access the mutex in any order.
