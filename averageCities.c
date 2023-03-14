@@ -57,7 +57,7 @@ void* processCity(char filename[]){
     float min_temp = 100;
     float max_temp = -100;
     float sum_temp = 0;
-    int num_entries = -1;
+    int num_entries = 0;
 
     while(fgets(line, MAX_LENGTH, file)){
         if(strcmp(line, "\n") == 0){
