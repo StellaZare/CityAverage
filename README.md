@@ -98,7 +98,8 @@ There is error handling for the call to pthread_create()
 There is error handling for the call to fopen()
 
 ### Inconsistencies in Data
-If a line in the data file is empty the line will be 
+If a line in the data file is empty the line will be ignored
+If a line does not have exactly 2 elements it will be ignored
 
 ## Single vs. Multithreaded Processing
 When ./averageCities is run as a single threaded process each file is opened, read and data printed before the next file is processed. 

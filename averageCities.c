@@ -60,7 +60,12 @@ void* processCity(char filename[]){
     int num_entries = -1;
 
     while(fgets(line, MAX_LENGTH, file)){
-        sscanf(line, "%f %f", &data[0], &data[1]);
+        if(strcmp(line, "\n") == 0){
+            continue;
+        }
+        if (sscanf(line, "%f %f", &data[0], &data[1]) != 2){
+            continue;
+        }
         max_temp = (data[0] > max_temp) ? data[0]: max_temp;
         min_temp = (data[1] < min_temp) ? data[1]: min_temp;
         sum_temp = sum_temp + data[0] + data[1];
