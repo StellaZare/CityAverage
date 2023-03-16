@@ -135,3 +135,5 @@ Average clock cycles for multi- thread after 10 trials: 311203.40 <br />
 We can see that the single threaded solution is using few clock cycles than the multi-threaded. A trend we observed in the previosu section as well. 
 However we can also see that the single threaded solution performs considerably better on MacOS, while the multi-threaded solution performs better on Linux. This could be due to either operating system's unique shecudlign algorithms.
 
+testing github access
+
